@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="GWLST : Groovy WebLogic Scripting Tool" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>GWLST</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/middlewareman/GWLST">View on GitHub</a>
+
+          <h1 id="project_title">GWLST</h1>
+          <h2 id="project_tagline">Groovy WebLogic Scripting Tool</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/middlewareman/GWLST/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/middlewareman/GWLST/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h2>Welcome to Groovy WebLogic Scripting Tool</h2>
+
+<p>GWLST is the Groovy cousin of 
+<a href="http://docs.oracle.com/cd/E24329_01/web.1211/e24491/toc.htm">Oracle WebLogic Scripting Tool (WLST)</a>,
+used to configure and manage WebLogic Server domains, servers and services.</p>
+
+<h1>WLST, JMX and MBeans</h1>
+
+<p>WLST is really two partially overlapping tools with a joint interface: </p>
+
+<ul>
+<li>In "offline mode", it manipulates a domain directory directly on a local file system.</li>
+<li>In "online mode", it connects to a running WebLogic Server over <a href="http://download.oracle.com/javase/7/docs/technotes/guides/jmx/index.html">JMX</a>.</li>
+</ul><p>WebLogic Server exposes its configuration and management interfaces as
+<a href="http://docs.oracle.com/cd/E24329_01/apirefs.1211/e24403/core/index.html">WebLogic Server MBeans</a>
+that are accessible remotely over JMX. The WebLogic Console exposes a subset of this interface; a JMX client can access anything that can be accessed through WebLogic Console and more.</p>
+
+<p>The great irony of Java Management Extensions (JMX) is that the Java programming language is poorly suited for writing a JMX client application because it lacks the dynamic language features to hide the fact that the remote MBean is not an ordinary object. Whereas WLST Online scripts are not pretty, they are still often less painful to write than 
+<a href="http://docs.oracle.com/cd/E24329_01/web.1211/e24415/toc.htm">developing custom management utilities with JMX in Java</a>.</p>
+
+<h1>GWLST and Groovy</h1>
+
+<p>GWLST is a pure JMX client, covering only the "online" aspect of WLST, but it does this more elegantly than either Java or WLST.</p>
+
+<p>Whereas WLST is a module on top if <a href="http://www.jython.org/">Jython</a>, GWLST is a 
+<a href="http://martinfowler.com/bliki/DomainSpecificLanguage.html">DSL</a> 
+embedded in the <a href="http://groovy.codehaus.org/">Groovy</a> programming language. Because Groovy compiles to Java Byte Code and runs on the JVM, it integrated seamlessly with other code written in Java.</p>
+
+<p>Groovy has dynamic language features allowing classes to "pretend" having properties and methods. The caller (written in Groovy) can therefore access MBeans as if they were ordinary objects rather than using the verbose reflection style. This is demonstrated in the simple <a href="http://groovy.codehaus.org/Groovy+and+JMX">GroovyMBean</a>, but GWLST takes it further by adding navigation (an MBean returns another MBean) and WebLogic metadata.</p>
+
+<h2>Summary</h2>
+
+<ul>
+<li>GWLST can be used as a scripting engine like WLST Online</li>
+<li>GWLST can be used as a library classes written in Groovy that are compiled and run seamlessly on the JVM</li>
+<li>GWLST scripts are typically a fraction of the length or either its counterpart written in WLST or Java</li>
+<li>GWLST is so expressive that it is useful to WebLogic administrators "on the fly" as an alternative to otherwise repetitive actions through the WebLogic Console</li>
+</ul>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">GWLST maintained by <a href="https://github.com/middlewareman">middlewareman</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
