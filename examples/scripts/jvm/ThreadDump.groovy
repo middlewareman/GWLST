@@ -7,19 +7,19 @@
  */
 
 if (domainRuntimeServer) {
-	println "Connected to admin server"
-	def drs = domainRuntimeServer.domainRuntimeService
-	def servers = args ? args.collect { drs.lookupServerRuntime it } : drs.ServerRuntimes
-	for (server in servers) {
-		if (server) {
-			println "\nServer $server.@objectName on $server.@home\n"
-			println server.JVMRuntime.ThreadStackDump
-		} else {
-			println "\nServer $serverName not found"
-		}
-	}
+    println "Connected to admin server"
+    def drs = domainRuntimeServer.domainRuntimeService
+    def servers = args ? args.collect { drs.lookupServerRuntime it } : drs.ServerRuntimes
+    for (server in servers) {
+        if (server) {
+            println "\nServer $server.@objectName on $server.@home\n"
+            println server.JVMRuntime.ThreadStackDump
+        } else {
+            println "\nServer $serverName not found"
+        }
+    }
 } else {
-	println "Connected to managed server"
-	def server = runtimeServer.runtimeService.ServerRuntime
-	println server.JVMRuntime.ThreadStackDump
+    println "Connected to managed server"
+    def server = runtimeServer.runtimeService.ServerRuntime
+    println server.JVMRuntime.ThreadStackDump
 }

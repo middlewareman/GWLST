@@ -4,7 +4,7 @@
  * Configure thread pool for servers.
  */
 editSave { domain ->
-	domain.Servers.each { server ->
-		server.SelfTuningThreadPoolSizeMax = 50
-	}
+    domain.Servers.each { server ->
+        server.SelfTuningThreadPoolSizeMax = 50
+    }
 }

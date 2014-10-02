@@ -5,11 +5,11 @@
  */
 
 def header() {
-	"FreeCur\tFree%\tSizeCur\tSizeMax"
+    "FreeCur\tFree%\tSizeCur\tSizeMax"
 }
 
 def describe(jvm) {
-	"${jvm.HeapFreeCurrent>>20} MB\t${jvm.HeapFreePercent}%\t${jvm.HeapSizeCurrent>>20} MB\t${jvm.HeapSizeMax>>20} MB"
+    "${jvm.HeapFreeCurrent >> 20} MB\t${jvm.HeapFreePercent}%\t${jvm.HeapSizeCurrent >> 20} MB\t${jvm.HeapSizeMax >> 20} MB"
 }
 
 println status()
@@ -22,10 +22,10 @@ print "Server     \t"
 println header()
 
 for (jvm in drs.ServerRuntimes.JVMRuntime) {
-	println jvm.Name
-	print "  beforeGC \t"
-	println describe(jvm)
-	jvm.runGC()
-	print "  afterGC  \t"
-	println describe(jvm)
+    println jvm.Name
+    print "  beforeGC \t"
+    println describe(jvm)
+    jvm.runGC()
+    print "  afterGC  \t"
+    println describe(jvm)
 }

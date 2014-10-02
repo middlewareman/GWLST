@@ -4,5 +4,5 @@
  * GWLST version of Oracle's PrintServerState.
  */
 for (sr in domainRuntimeServer.domainRuntimeService.ServerRuntimes) {
-	println "Server name:$sr.Name state:$sr.State"
+    println "Server name:$sr.Name state:$sr.State"
 }

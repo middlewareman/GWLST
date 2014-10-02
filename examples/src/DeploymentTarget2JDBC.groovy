@@ -13,14 +13,14 @@ ipw.println()
 drs = domainRuntimeServer.domainRuntimeService
 domain = drs.DomainConfiguration
 for (appDeployment in domain.AppDeployments) {
-	ipw.indent("AppDeployment $appDeployment.Name") {
-		for (appTarget in appDeployment.Targets) {
-			ipw.indent("Target $appTarget.Name") {
-				def jdbcOnTarget = domain.JDBCSystemResources.findAll { appTarget in it.Targets }
-				for (jdbc in jdbcOnTarget ) {
-					ipw.println "JDBCSystemResource $jdbc.Name"
-				}
-			}
-		}
-	}
+    ipw.indent("AppDeployment $appDeployment.Name") {
+        for (appTarget in appDeployment.Targets) {
+            ipw.indent("Target $appTarget.Name") {
+                def jdbcOnTarget = domain.JDBCSystemResources.findAll { appTarget in it.Targets }
+                for (jdbc in jdbcOnTarget) {
+                    ipw.println "JDBCSystemResource $jdbc.Name"
+                }
+            }
+        }
+    }
 }
