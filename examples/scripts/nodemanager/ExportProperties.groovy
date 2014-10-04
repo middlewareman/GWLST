@@ -1,4 +1,8 @@
-/* Copyright (c) 2014 Andreas Nyberg. http://middlewareman.github.io/GWLST */
+/*
+ * Copyright (c) 2011-2014 Andreas Nyberg.
+ * Licensed under the Apache License, Version 2.0 [http://www.apache.org/licenses/LICENSE-2.0].
+ * http://middlewareman.github.io/GWLST
+ */
 
 def domain = domainRuntimeService.DomainConfiguration
 String serverName = args.length ? args[0] : domain.AdminServerName

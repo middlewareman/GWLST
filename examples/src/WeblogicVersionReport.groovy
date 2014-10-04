@@ -1,4 +1,8 @@
-/* Copyright (c) 2014 Andreas Nyberg. http://middlewareman.github.io/GWLST */
+/*
+ * Copyright (c) 2011-2014 Andreas Nyberg.
+ * Licensed under the Apache License, Version 2.0 [http://www.apache.org/licenses/LICENSE-2.0].
+ * http://middlewareman.github.io/GWLST
+ */
 
 /**
  * Reports the WebLogic version reported by running servers in a domain
